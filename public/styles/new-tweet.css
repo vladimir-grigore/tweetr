@@ -1,9 +1,9 @@
 .new-tweet {
   border-radius: 5px;
   border: 1px solid lightgrey;
-  background-color: #edeff2;
-  margin: 0 2em;
-  padding: 0 10px;
+  background-color: #F3F3F3;
+  margin: 0em 2em 1em 2em;
+  padding: 10px;
 }
 
 .new-tweet > h2 {
@@ -26,4 +26,54 @@
 
 .over-limit {
   color: red;
+}
+
+#tweets {
+}
+
+article.tweet {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  margin: 0 2em;
+}
+
+article.tweet header {
+  background-color: #F3F3F3;
+  padding: 10px;
+  overflow: auto;
+  opacity: 0.5;
+}
+
+article.tweet header:hover {
+  opacity: 1;
+}
+
+.tweet header img {
+  border-radius: 5px;
+  float: left;
+}
+
+header h2.author-name {
+  float: left;
+  margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #244751;
+}
+header div.author-handle {
+  float: right;
+}
+
+article.tweet footer {
+  border-top: 1px solid lightgrey;
+}
+
+div.tweet-body {
+  min-height: 75px;
+  padding: 20px 10px;
+}
+
+article.tweet footer {
+  padding: 10px;
+  font-size: 0.75em;
 }
