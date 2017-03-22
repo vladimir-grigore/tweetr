@@ -9,18 +9,12 @@ $(document).ready(function(){
   $("form[action='/tweets']").on('submit', function(event) {
     event.preventDefault();
 
-    var $inputField = $("textarea[name='text']");
-    console.log("POST BODY:", $(this).serialize());
-
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: $(this).serialize()
-    }).done(function(serverReturn) {
-        console.log("POST SUCCESS, server returned:", serverReturn);
-      }).fail(function(err) {
-        console.log("POST FAILURE...");
-      });
+    }).done(function(){})
+      .fail(function(err){});
 
   })
 
