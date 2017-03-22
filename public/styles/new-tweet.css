@@ -79,6 +79,10 @@
   right: 10px;
 }
 
+.tweet footer div.icons i {
+  padding: 2px;
+}
+
 .tweet .tweet-body {
   margin: 20px 10px;
 }
