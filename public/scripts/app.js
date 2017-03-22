@@ -58,6 +58,9 @@ function createTweetElement(tweetData) {
 }
 
 function renderTweets(tweets) {
+  //Clear all tweets first
+  $("#tweets-container").empty();
+
   // loops through tweets
   for(let tweet of tweets) {
     // calls createTweetElement for each tweet
