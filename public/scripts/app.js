@@ -31,8 +31,14 @@ $(document).ready(function(){
         $tweetText.val('').trigger('input');
       });
     }
+  });
 
-  })
+  // Use slideToggle to hide the new tweet form
+  $(".nav-bar-button").on('click', function(){
+    $("section.new-tweet").slideToggle(function(){
+      $("textarea[name='text']").focus();
+    });
+  });
 });
 
 function showError(message){
