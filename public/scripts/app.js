@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+// var moment = require("moment");
 
 $(document).ready(function(){
   var $tweet = createTweetElement(tweetData);
@@ -10,14 +11,26 @@ $(document).ready(function(){
 });
 
 function createTweetElement(tweetData) {
+  // var datePosted = moment.unix(tweetData.created_at).calendar();
+  var theDate = new Date(tweetData.created_at);
+
   var $tweet = $("<article>").addClass("tweet");
   var $header = $("<header>").appendTo($tweet);
+
+  // Tweet header
   $("<img>").attr("src", tweetData.user.avatars.small).appendTo($header);
   $("<h2>").addClass("author-name").text(tweetData.user.name).appendTo($header);
   $("<div>").addClass("author-handle").text(tweetData.user.handle).appendTo($header);
+
+  // Tweet body
   $("<div>").addClass("tweet-body").text(tweetData.content.text).appendTo($tweet);
+
+  // Tweet footer
   var $footer = $("<footer>").appendTo($tweet);
-  $("<div>").addClass("date-posted").text(tweetData.created_at).appendTo($footer);
+  // $("<div>").addClass("date-posted").text(tweetData.created_at).appendTo($footer);
+  $("<div>").addClass("date-posted").attr("data-livestamp", theDate).appendTo($footer);
+
+  // Footer icons
   var $icons_div = $("<div>").addClass("icons").appendTo($footer);
   $("<i>").addClass("fa fa-flag").attr("aria-hidden", "true").appendTo($icons_div);
   $("<i>").addClass("fa fa-retweet").attr("aria-hidden", "true").appendTo($icons_div);
@@ -27,7 +40,6 @@ function createTweetElement(tweetData) {
 }
 
 
-// Test / driver code (temporary). Eventually will get this from the server.
 var tweetData = {
   "user": {
     "name": "Newton",
@@ -43,10 +55,3 @@ var tweetData = {
   },
   "created_at": 1461116232227
 }
-
-var $tweet = createTweetElement(tweetData);
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to
-// the page so we can make sure it's got all the right elements, classes, etc.

@@ -32,7 +32,9 @@
   border-radius: 5px;
   border: 1px solid lightgrey;
   margin: 0 2em;
+  margin-bottom: 10px;
 }
+
 .tweet header * {
   display: inline-block;
 }
