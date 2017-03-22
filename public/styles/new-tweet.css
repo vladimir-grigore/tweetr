@@ -67,6 +67,14 @@
   border-top: 1px solid lightgrey;
   padding: 10px;
   font-size: 0.75em;
+  position: relative;
+  display: flex;
+}
+
+.tweet footer div.icons {
+  color: #66C5B7;
+  position: absolute;
+  right: 10px;
 }
 
 .tweet .tweet-body {
