@@ -14,7 +14,7 @@ function createTweetElement(tweetData) {
   var $header = $("<header>").appendTo($tweet);
 
   // Tweet header
-  $("<img>").attr("src", tweetData.user.avatars.small).appendTo($header);
+  $("<img>").attr("src", tweetData.user.avatars.small).attr("alt", "avatar").appendTo($header);
   $("<h2>").addClass("author-name").text(tweetData.user.name).appendTo($header);
   $("<div>").addClass("author-handle").text(tweetData.user.handle).appendTo($header);
 
