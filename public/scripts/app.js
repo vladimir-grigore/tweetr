@@ -28,21 +28,33 @@ $(document).ready(function(){
         data: $(this).serialize()
       }).done(function(){
         loadTweets();
-        $tweetText.val('');
+        $tweetText.val('').trigger('input');
       });
     }
 
   })
 });
 
+function showError(message){
+  var $errorMessage = $("<strong>").addClass("over-limit new-tweet");
+  $errorMessage.text(message).insertBefore($(".new-tweet"));
+}
+
+function hideError(){
+  $("strong.over-limit").detach();
+}
+
 function checkValidation(tweetText){
+  hideError()
+
   if(!tweetText){
-    console.log("Empty tweet!");
+    showError("Empty tweet");
     return false;
   } else if (tweetText.length > 140){
-    console.log("Above 140 chars!");
+    showError("Text is longer than 140 characters");
     return false;
   } else {
+    hideError()
     return true;
   }
 }
@@ -67,9 +79,11 @@ function createTweetElement(tweetData) {
 
   // Footer icons
   var $icons_div = $("<div>").addClass("icons").appendTo($footer);
-  $("<i>").addClass("fa fa-flag").attr("aria-hidden", "true").appendTo($icons_div);
-  $("<i>").addClass("fa fa-retweet").attr("aria-hidden", "true").appendTo($icons_div);
-  $("<i>").addClass("fa fa-heart").attr("aria-hidden", "true").appendTo($icons_div);
+
+
+  ["flag", "retweet", "heart"].forEach(function(item) {
+    $("<i>").addClass("fa fa-" + item).attr("aria-hidden", "true").appendTo($icons_div);
+  })
 
   return $tweet;
 }
@@ -83,6 +97,6 @@ function renderTweets(tweets) {
     // calls createTweetElement for each tweet
     var $tweet = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
-    $("#tweets-container").append($tweet);
+    $("#tweets-container").prepend($tweet);
   }
 }
