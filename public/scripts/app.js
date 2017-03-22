@@ -18,17 +18,34 @@ $(document).ready(function(){
   // Ajax call for POST-ing new tweet
   $("form[action='/tweets']").on('submit', function(event) {
     event.preventDefault();
+    var $tweetText = $(".new-tweet").find("textarea[name='text']");
 
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $(this).serialize()
-    }).done(function(){
-      loadTweets();
-      $(".new-tweet").find("textarea[name='text']").val('');
-    });
+    // Check if the tweet is empty or over 140 chars
+    if( checkValidation($tweetText.val()) ){
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: $(this).serialize()
+      }).done(function(){
+        loadTweets();
+        $tweetText.val('');
+      });
+    }
+
   })
 });
+
+function checkValidation(tweetText){
+  if(!tweetText){
+    console.log("Empty tweet!");
+    return false;
+  } else if (tweetText.length > 140){
+    console.log("Above 140 chars!");
+    return false;
+  } else {
+    return true;
+  }
+}
 
 function createTweetElement(tweetData) {
   var theDate = new Date(tweetData.created_at);

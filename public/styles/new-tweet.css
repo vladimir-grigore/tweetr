@@ -85,4 +85,5 @@
 
 .tweet .tweet-body {
   margin: 20px 10px;
+  word-wrap: break-word;
 }
