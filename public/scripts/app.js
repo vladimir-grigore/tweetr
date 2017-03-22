@@ -3,14 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// var moment = require("moment");
-
 $(document).ready(function(){
   renderTweets(data);
 });
 
 function createTweetElement(tweetData) {
-  // var datePosted = moment.unix(tweetData.created_at).calendar();
   var theDate = new Date(tweetData.created_at);
 
   var $tweet = $("<article>").addClass("tweet");
@@ -26,7 +23,6 @@ function createTweetElement(tweetData) {
 
   // Tweet footer
   var $footer = $("<footer>").appendTo($tweet);
-  // $("<div>").addClass("date-posted").text(tweetData.created_at).appendTo($footer);
   $("<div>").addClass("date-posted").attr("data-livestamp", theDate).appendTo($footer);
 
   // Footer icons
