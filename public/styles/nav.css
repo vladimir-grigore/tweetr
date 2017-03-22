@@ -20,3 +20,28 @@
   font-size: 200%;
   margin-left: 10px;
 }
+
+.nav-bar-button {
+  border-radius: 5px;
+  color: #66C5B7;
+  background-color: white;
+  border: 1px solid black;
+  padding: 15px 10px;
+  position: relative;
+  float: right;
+  margin-top: 15px;
+  margin-left: 15px;
+  cursor: pointer;
+  display: flex;
+  opacity: 0.85;
+  outline: none;
+}
+
+.nav-bar-button:hover {
+  opacity: 1;
+  color: black;
+}
+
+.nav-bar-button i {
+  padding-right: 5px;
+}

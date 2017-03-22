@@ -46,7 +46,6 @@ function hideError(){
 
 function checkValidation(tweetText){
   hideError()
-
   if(!tweetText){
     showError("Empty tweet");
     return false;
@@ -61,7 +60,6 @@ function checkValidation(tweetText){
 
 function createTweetElement(tweetData) {
   var theDate = new Date(tweetData.created_at);
-
   var $tweet = $("<article>").addClass("tweet");
   var $header = $("<header>").appendTo($tweet);
 
@@ -79,8 +77,6 @@ function createTweetElement(tweetData) {
 
   // Footer icons
   var $icons_div = $("<div>").addClass("icons").appendTo($footer);
-
-
   ["flag", "retweet", "heart"].forEach(function(item) {
     $("<i>").addClass("fa fa-" + item).attr("aria-hidden", "true").appendTo($icons_div);
   })
