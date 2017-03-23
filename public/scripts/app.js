@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(function(){
   // Ajax call for GET-ing all tweets
   function loadTweets(){
@@ -47,7 +48,7 @@ function showError(message){
 }
 
 function hideError(){
-  $("strong.over-limit").detach();
+  $("strong.over-limit").remove();
 }
 
 function checkValidation(tweetText){
@@ -59,13 +60,12 @@ function checkValidation(tweetText){
     showError("Text is longer than 140 characters");
     return false;
   } else {
-    hideError()
     return true;
   }
 }
 
 function createTweetElement(tweetData) {
-  var theDate = new Date(tweetData.created_at);
+  theDate = moment(tweetData.created_at).fromNow();
   var $tweet = $("<article>").addClass("tweet");
   var $header = $("<header>").appendTo($tweet);
 
@@ -79,7 +79,7 @@ function createTweetElement(tweetData) {
 
   // Tweet footer
   var $footer = $("<footer>").appendTo($tweet);
-  $("<div>").addClass("date-posted").attr("data-livestamp", theDate).appendTo($footer);
+  $("<div>").addClass("date-posted").text(theDate).appendTo($footer);
 
   // Footer icons
   var $icons_div = $("<div>").addClass("icons").appendTo($footer);
