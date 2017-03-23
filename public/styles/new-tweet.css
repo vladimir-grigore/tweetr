@@ -7,6 +7,10 @@
   display: block;
 }
 
+section.new-tweet:hover {
+  border: 1px solid black;
+}
+
 .new-tweet > h2 {
   border-bottom: 1px solid black;
   margin: 10px 0 20px 0;
@@ -34,6 +38,10 @@
   border: 1px solid lightgrey;
   margin: 0 2em;
   margin-bottom: 10px;
+}
+
+article.tweet:hover {
+  border: 1px solid black;
 }
 
 .tweet header * {
