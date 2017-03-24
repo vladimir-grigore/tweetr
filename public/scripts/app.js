@@ -33,6 +33,13 @@ $(document).ready(function(){
     }
   });
 
+  // Like tweet
+  $("#tweets-container").on('click', "div.icons > i.fa.fa-heart", function(e){
+    var $counter = $(this).parent().find("i:last-child");
+    var likes = Number($counter.text()) + 1;
+    $counter.text(likes);
+  });
+
   // Use slideToggle to hide the new tweet form
   $(".nav-bar-button").on('click', function(){
     $("section.new-tweet").slideToggle(function(){
