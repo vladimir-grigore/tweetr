@@ -86,6 +86,8 @@ function createTweetElement(tweetData) {
     $("<i>").addClass("fa fa-" + item).attr("aria-hidden", "true").appendTo($icons_div);
   });
 
+  $("<i>").text(tweetData.likes).appendTo($icons_div);
+
   return $tweet;
 }
 
