@@ -25,6 +25,14 @@ section.new-tweet:hover {
   margin-bottom: 10px;
 }
 
+input[value="Tweet"] {
+  opacity: 0.5;
+}
+
+input[value="Tweet"]:hover {
+  opacity: 1;
+}
+
 .new-tweet .counter {
   float: right;
 }
@@ -90,6 +98,11 @@ article.tweet:hover {
 
 .tweet footer div.icons i {
   padding: 2px;
+}
+
+.tweet footer div.icons i:hover {
+  padding: 2px;
+  color: #59a89c;
 }
 
 .tweet .tweet-body {
