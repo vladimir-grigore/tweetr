@@ -1,0 +1,9 @@
+$black-border: 1px solid black;
+$tweeter-green: #009F86;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}

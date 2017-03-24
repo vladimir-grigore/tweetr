@@ -1,0 +1,49 @@
+@import "variables";
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: $tweeter-green;
+  color: #e8fdff;
+  padding: 0 2em;
+  z-index: 1;
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+
+  .header {
+    line-height: 80px;
+    font-size: 200%;
+    margin-left: 10px;
+  }
+}
+
+.nav-bar-button {
+  border-radius: 5px;
+  color: $tweeter-green;
+  background-color: white;
+  border: $black-border;
+  padding: 15px 10px;
+  position: relative;
+  float: right;
+  margin-top: 15px;
+  margin-left: 15px;
+  cursor: pointer;
+  display: flex;
+  opacity: 0.85;
+  outline: none;
+
+  &:hover {
+    opacity: 1;
+    color: black;
+  }
+
+  i {
+    padding-right: 5px;
+  }
+}
