@@ -10,7 +10,7 @@ $(document).ready(function(){
       url: '/tweets',
       method: "GET"
     }).done(renderTweets);
-  };
+  }
 
   // Render all tweets
   loadTweets();
@@ -51,7 +51,7 @@ function hideError(){
 }
 
 function checkValidation(tweetText){
-  hideError()
+  hideError();
   if(!tweetText){
     showError("Empty tweet");
     return false;
@@ -84,7 +84,7 @@ function createTweetElement(tweetData) {
   var $icons_div = $("<div>").addClass("icons").appendTo($footer);
   ["flag", "retweet", "heart"].forEach(function(item) {
     $("<i>").addClass("fa fa-" + item).attr("aria-hidden", "true").appendTo($icons_div);
-  })
+  });
 
   return $tweet;
 }
