@@ -55,6 +55,10 @@ article.tweet:hover {
   div.icons {
     visibility: visible;
   }
+
+  header {
+    opacity: 1;
+  }
 }
 
 .tweet header {
@@ -66,10 +70,6 @@ article.tweet:hover {
   
   * {
     display: inline-block;
-  }
-
-  &:hover {
-    opacity: 1;
   }
 
   img {

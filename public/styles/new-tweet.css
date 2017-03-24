@@ -44,6 +44,8 @@ article.tweet:hover {
   border: 1px solid black; }
   article.tweet:hover div.icons {
     visibility: visible; }
+  article.tweet:hover header {
+    opacity: 1; }
 
 .tweet header {
   background-color: #F3F3F3;
@@ -53,8 +55,6 @@ article.tweet:hover {
   position: relative; }
   .tweet header * {
     display: inline-block; }
-  .tweet header:hover {
-    opacity: 1; }
   .tweet header img {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
