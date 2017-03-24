@@ -34,10 +34,17 @@ $(document).ready(function(){
   });
 
   // Like tweet
-  $("#tweets-container").on('click', "div.icons > i.fa.fa-heart", function(e){
+  $("#tweets-container").on('click', "div.icons > i.fa.fa-heart", function(){
     var $counter = $(this).parent().find("i:last-child");
     var likes = Number($counter.text()) + 1;
+    console.log("=ID=", $(this).parents(".tweet").data('id'));
     $counter.text(likes);
+
+    // Send a POST request to /tweets/:id
+    $.ajax({
+      url: `/tweets/${$(this).parents(".tweet").data('id')}`,
+      method: 'POST',
+    }).done(loadTweets);
   });
 
   // Use slideToggle to hide the new tweet form
@@ -71,8 +78,9 @@ function checkValidation(tweetText){
 }
 
 function createTweetElement(tweetData) {
+
   theDate = moment(tweetData.created_at).fromNow();
-  var $tweet = $("<article>").addClass("tweet");
+  var $tweet = $("<article>").addClass("tweet").data('id', tweetData._id);
   var $header = $("<header>").appendTo($tweet);
 
   // Tweet header
