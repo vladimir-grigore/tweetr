@@ -68,6 +68,10 @@ article.tweet:hover {
   opacity: 1;
 }
 
+article.tweet:hover div.icons {
+    visibility: visible;
+  }
+
 .tweet header img {
   border-radius: 5px;
 }
@@ -94,6 +98,10 @@ article.tweet:hover {
   color: #66C5B7;
   position: absolute;
   right: 10px;
+}
+
+.tweet footer div.icons {
+  visibility: hidden;
 }
 
 .tweet footer div.icons i {
