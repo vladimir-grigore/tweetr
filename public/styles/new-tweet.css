@@ -1,119 +1,92 @@
 .new-tweet {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid lightgrey;
   background-color: #F3F3F3;
   margin: 0em 2em 1em 2em;
   padding: 10px;
-  display: block;
-}
+  display: block; }
+  .new-tweet textarea {
+    width: 100%;
+    padding: 5px; }
+  .new-tweet input {
+    margin-bottom: 10px; }
+  .new-tweet .counter {
+    float: right; }
 
 section.new-tweet:hover {
-  border: 1px solid black;
-}
+  border: 1px solid black; }
 
 .new-tweet > h2 {
   border-bottom: 1px solid black;
-  margin: 10px 0 20px 0;
-}
-
-.new-tweet textarea {
-  width: 100%;
-  padding: 5px;
-}
-
-.new-tweet input {
-  margin-bottom: 10px;
-}
+  margin: 10px 0 20px 0; }
 
 input[value="Tweet"] {
-  opacity: 0.5;
-}
-
-input[value="Tweet"]:hover {
-  opacity: 1;
-}
-
-.new-tweet .counter {
-  float: right;
-}
+  opacity: 0.5; }
+  input[value="Tweet"]:hover {
+    opacity: 1; }
 
 .over-limit {
-  color: red;
-}
+  color: red; }
 
 .tweet {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
   border-radius: 5px;
   border: 1px solid lightgrey;
   margin: 0 2em;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 article.tweet:hover {
-  border: 1px solid black;
-}
-
-.tweet header * {
-  display: inline-block;
-}
+  border: 1px solid black; }
+  article.tweet:hover div.icons {
+    visibility: visible; }
 
 .tweet header {
   background-color: #F3F3F3;
   padding: 10px;
   opacity: 0.7;
   vertical-align: super;
-  position: relative;
-}
-
-.tweet header:hover {
-  opacity: 1;
-}
-
-article.tweet:hover div.icons {
-    visibility: visible;
-  }
-
-.tweet header img {
-  border-radius: 5px;
-}
-
-.tweet header h2.author-name {
-  margin: 0 0 0 10px;
-  color: #244751;
-  vertical-align: top;
-}
-.tweet header div.author-handle {
-  position: absolute;
-  right: 10px;
-}
+  position: relative; }
+  .tweet header * {
+    display: inline-block; }
+  .tweet header:hover {
+    opacity: 1; }
+  .tweet header img {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+  .tweet header h2.author-name {
+    margin: 0 0 0 10px;
+    color: #244751;
+    vertical-align: top; }
+  .tweet header div.author-handle {
+    position: absolute;
+    right: 10px; }
 
 .tweet footer {
   border-top: 1px solid lightgrey;
   padding: 10px;
   font-size: 0.75em;
   position: relative;
-  display: flex;
-}
-
-.tweet footer div.icons {
-  color: #66C5B7;
-  position: absolute;
-  right: 10px;
-}
-
-.tweet footer div.icons {
-  visibility: hidden;
-}
-
-.tweet footer div.icons i {
-  padding: 2px;
-}
-
-.tweet footer div.icons i:hover {
-  padding: 2px;
-  color: #59a89c;
-}
+  display: flex; }
+  .tweet footer div.icons {
+    color: #00d2b1;
+    position: absolute;
+    right: 10px;
+    visibility: hidden; }
+    .tweet footer div.icons i {
+      padding: 2px; }
+    .tweet footer div.icons i:hover {
+      padding: 2px;
+      color: #009F86; }
 
 .tweet .tweet-body {
   margin: 20px 10px;
-  word-wrap: break-word;
-}
+  word-wrap: break-word; }
+
+/*# sourceMappingURL=new-tweet.css.map */
