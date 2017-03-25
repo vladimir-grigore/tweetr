@@ -37,13 +37,14 @@ $(document).ready(function(){
   $("#tweets-container").on('click', "div.icons > i.fa.fa-heart", function(){
     var $counter = $(this).parent().find("i:last-child");
     var likes = Number($counter.text()) + 1;
-    console.log("=ID=", $(this).parents(".tweet").data('id'));
+    var tweetId = $(this).parents(".tweet").data('id');
     $counter.text(likes);
 
     // Send a POST request to /tweets/:id
     $.ajax({
-      url: `/tweets/${$(this).parents(".tweet").data('id')}`,
+      url: `/tweets/${tweetId}`,
       method: 'POST',
+      data: {id: tweetId}
     }).done(loadTweets);
   });
 
